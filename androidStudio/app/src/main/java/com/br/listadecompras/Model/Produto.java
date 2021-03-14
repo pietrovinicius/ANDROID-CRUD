@@ -4,8 +4,8 @@ public class Produto {
 
     private long id;
     private String descricao;
-    private float valor;
-    private float qnt;
+    private double valor;
+    private double qnt;
 
     //método contrutor
     public Produto(long id, String descricao, float valor, float qnt) {
@@ -31,19 +31,19 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
-    public float getQnt() {
+    public double getQnt() {
         return qnt;
     }
 
-    public void setQnt(float qnt) {
+    public void setQnt(double qnt) {
         this.qnt = qnt;
     }
 
