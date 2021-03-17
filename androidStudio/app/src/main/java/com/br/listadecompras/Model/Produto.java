@@ -4,15 +4,23 @@ public class Produto {
 
     private long id;
     private String descricao;
-    private double valor;
     private double qnt;
+    private double valor;
+
+
+
+
+    public Produto(){
+        descricao = "";
+        qnt = 00;
+        valor = 00;
+    }
 
     //método contrutor
-    public Produto(long id, String descricao, float valor, float qnt) {
-        this.id = id;
+    public Produto(String descricao, String quantidade, String valor) {
         this.descricao = descricao;
-        this.valor = valor;
-        this.qnt = qnt;
+        this.qnt = Double.parseDouble(quantidade);
+        this.valor = Double.parseDouble(valor);
     }
 
     public long getId() {
@@ -49,11 +57,8 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" +
-                "id=" + id +
-                ", descricao='" + descricao + '\'' +
-                ", valor=" + valor +
-                ", qnt=" + qnt +
-                '}';
+        return  descricao +
+                " - " + qnt + "x" +
+                " - R$" + valor;
     }
 }
