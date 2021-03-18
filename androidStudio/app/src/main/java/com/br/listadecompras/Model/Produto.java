@@ -4,23 +4,23 @@ public class Produto {
 
     private long id;
     private String descricao;
-    private double qnt;
-    private double valor;
+    private String qnt;
+    private String valor;
 
 
 
 
     public Produto(){
         descricao = "";
-        qnt = 00;
-        valor = 00;
+        qnt = "";
+        valor = "";
     }
 
     //método contrutor
     public Produto(String descricao, String quantidade, String valor) {
         this.descricao = descricao;
-        this.qnt = Double.parseDouble(quantidade);
-        this.valor = Double.parseDouble(valor);
+        this.qnt = quantidade;
+        this.valor = valor;
     }
 
     public long getId() {
@@ -39,20 +39,20 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public double getQnt() {
+    public String getQnt() {
         return qnt;
     }
 
-    public void setQnt(double qnt) {
+    public void setQnt(String qnt) {
         this.qnt = qnt;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
     }
 
     @Override

@@ -15,9 +15,7 @@ public class DAOdbHelper extends SQLiteOpenHelper {
 
     //guardando todos os meus cod sql
     String[] sql = {
-            "CREATE TABLE Produtos(id  LONG PRIMARY KEY ,descricao TEXT  , valor TEXT , quantidade TEXT);",
-            "INSERT INTO Produtos VALUES('3' , 'duzia de banana' , '5' , '1');",
-            "INSERT INTO Produtos VALUES('4' , 'alho' , '10' , '1');"
+            "CREATE TABLE Produtos(id  LONG PRIMARY KEY ,descricao TEXT  , quantidade TEXT, valor TEXT );"
     };
 
     //minha classe que manipula todos acesso ao meu DB
@@ -41,12 +39,12 @@ public class DAOdbHelper extends SQLiteOpenHelper {
 
 
     //função insert
-    public long InsertProduto(String produto, String valor, String quantidade) {
+    public long InsertProduto(String descricao, String quantidade, String valor) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("produto", produto);
-        values.put("valor", valor);
+        values.put("descricao", descricao);
         values.put("quantidade", quantidade);
+        values.put("valor", valor);
         //se der certo ele me retorna a linha se der errado ele retorna -1
         return db.insert("Produtos", null, values);
     }
@@ -70,7 +68,13 @@ public class DAOdbHelper extends SQLiteOpenHelper {
     //função select
     public Cursor SelectAllProdutos() {
         SQLiteDatabase db = getReadableDatabase();
-        return db.rawQuery("SELECT * FROM Produtos", null);
+        return db.rawQuery("SELECT * FROM Produtos ORDER BY descricao ASC", null);
+    }
+
+    //todo delet
+    public Cursor DeletAllProdutos() {
+        SQLiteDatabase db = getReadableDatabase();
+        return db.rawQuery("DELETE FROM Produtos", null);
     }
 
     public Cursor SelectByProduto(String produto) {
