@@ -5,4 +5,14 @@
     <string name="valor">valor</string>
     <string name="total">TOTAL</string>
     <string name="add">ADD</string>
+    <string name="novo_utilizador">Novo Utilizador</string>
+    <string name="digite_o_username">Digite o nome</string>
+    <string name="digite_a_senha">digite a senha</string>
+    <string name="gravar">Gravar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="dados_do_usu_rio">Dados do usuário</string>
+    <string name="username">Username:</string>
+    <string name="senha">Senha:</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
 </resources>
