@@ -36,10 +36,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:id="@+id/edt_username"
+            android:id="@+id/edt_DadosUtilizador_username"
             android:hint="@string/digite_o_username"
             android:gravity="center"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:enabled="false"/>
     </LinearLayout>
 
     <LinearLayout
@@ -59,8 +60,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:id="@+id/edt_password"
-            android:inputType="textPassword"
+            android:id="@+id/edt_DadosUtilizador_password"
+
             android:gravity="center"
             android:hint="@string/digite_a_senha" />
 
@@ -74,26 +75,23 @@
         android:padding="20dp"
         android:gravity="center">
         <Button
-            android:id="@+id/bt_modificar"
+            android:id="@+id/bt_DadosUtilizador_modificar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modificar"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
-            android:minWidth="100dp"
             />
         <Button
-            android:id="@+id/bt_eliminar"
+            android:id="@+id/bt_DadosUtilizador_eliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
-            android:minWidth="100dp"
             android:text="@string/eliminar" />
         <Button
-            android:id="@+id/bt_Dados_utilizador_cancelar"
+            android:id="@+id/bt_DadosUtilizador__cancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="100dp"
             android:text="@string/cancelar" />
 
     </LinearLayout>

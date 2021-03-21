@@ -21,7 +21,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edt_username"
+        android:id="@+id/edt_NovoUtilizador_username"
         android:hint="@string/digite_o_username"
         android:gravity="center"
         android:inputType="text"/>
@@ -29,7 +29,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edt_password"
+        android:id="@+id/edt_NovoUtilizador_password"
         android:inputType="textPassword"
         android:gravity="center"
         android:hint="@string/digite_a_senha" />

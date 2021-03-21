@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -42,6 +43,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //carregar assim que clicar em alguem da list
+        lv_utilizadores.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //assim que clicar vai mudar de Activity
+                Intent i = new Intent(MainActivity.this, dadosUtilizadorActivity.class);
+                //preciso enviar a chave primária para pesquisar no banco de dados
+                i.putExtra("username" , lista_Utilizadores.get(position).getUsername());
+                //como vou querer retorno, vou usar o forResult
+                startActivityForResult(i , 2);
+
+            }
+        });
+
+
         listarUtilizadores();
     }
 
@@ -56,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 String username = c.getString(c.getColumnIndex("username"));
                 String password = c.getString(c.getColumnIndex("password"));
                 lista_Utilizadores.add(new Utilizador(username,password));
-                Log.d("===========Utilizadores" , username + password);
+                Log.d("===========listarUtilizadores() " , username + " / " + password);
             }while (c.moveToNext());
         }
         ArrayAdapter<Utilizador> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1 , lista_Utilizadores);
@@ -68,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == 1 && resultCode == 1){
+            //desta forma recarrega a lista
+            listarUtilizadores();
+        }else if(requestCode == 2 && resultCode == 2){
             //desta forma recarrega a lista
             listarUtilizadores();
         }
